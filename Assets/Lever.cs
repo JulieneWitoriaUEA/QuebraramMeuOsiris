@@ -13,12 +13,12 @@ public class Lever : MonoBehaviour
     {
         if (collision.CompareTag("Player") && Mathf.Abs(collision.transform.rotation.z-transform.rotation.z)<0.1f)
         {
-            if (on && collision.GetComponent<SpriteRenderer>().flipX)
+            if (on && collision.GetComponentInChildren<SpriteRenderer>().flipX)
             {
                 onSwitchOff.Invoke();
                 on = false;
             }
-            else if (!collision.GetComponent<SpriteRenderer>().flipX)
+            else if (!collision.GetComponentInChildren<SpriteRenderer>().flipX)
             {
                 onSwitchOn.Invoke();
                 on = true;

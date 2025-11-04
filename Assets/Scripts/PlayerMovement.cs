@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Visual")]
     [SerializeField] private bool flipSprite = true;
     [SerializeField] private SpriteRenderer sprite;
-    [SerializeField] private Animator animator; // opcional (bool "Climbing")
+    [SerializeField] private Animator animator; // opcional (bool "Climbing", bool "Walk")
 
     [Header("Escada")]
     [SerializeField] private string ladderTag = "Ladder";
@@ -70,15 +70,19 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical"); // lê aqui para usar no FixedUpdate
-
         input = new Vector2(x, 0f);
 
         // se estiver escalando, não flipar com x
         if (!climbing && flipSprite && sprite && Mathf.Abs(x) > 0.01f)
             sprite.flipX = x < 0f;
 
+        // --- Atualiza animações ---
         if (animator)
+        {
+            bool isWalking = grounded && Mathf.Abs(x) > 0.01f && !climbing;
+            animator.SetBool("Walk", isWalking);
             animator.SetBool("Climbing", climbing && Mathf.Abs(inputY) > 0.01f);
+        }
     }
 
     private void FixedUpdate()
@@ -161,7 +165,6 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(targetX, rb.linearVelocity.y);
     }
 
-
     // ====== DETECÇÃO DE CHÃO VIA CALLBACKS ======
     private void OnCollisionEnter2D(Collision2D c)
     {
@@ -219,26 +222,20 @@ public class PlayerMovement : MonoBehaviour
         if (!other.CompareTag(ladderTag)) return;
         if (!grounded) return;
 
-        // Não iniciar escalada se o input está tentando SAIR pela base/topo
         Bounds l = other.bounds;
         float halfH = col.bounds.size.y;
         float minY = l.min.y + halfH;
         float maxY = l.max.y - halfH;
 
-        // quão perto consideramos "na base/topo"
         const float EPS = 0.02f;
         float y = transform.position.y;
 
         bool atBase = y <= (minY + EPS);
         bool atTop = y >= (maxY - EPS);
 
-        // se ainda não está escalando e há input vertical, tenta entrar
         if (!climbing && Mathf.Abs(inputY) > 0.01f)
         {
-            // bloqueia reentrada quando estiver na base apertando para baixo
             if (inputY < 0f && atBase) return;
-
-            // opcional: bloqueia entrada no topo apertando para cima
             if (inputY > 0f && atTop) return;
 
             currentLadder = other;
@@ -251,7 +248,6 @@ public class PlayerMovement : MonoBehaviour
         if (!other.isTrigger) return;
         if (!other.CompareTag(ladderTag)) return;
 
-        // saiu da ladder atual
         if (other == currentLadder)
         {
             currentLadder = null;
@@ -263,9 +259,9 @@ public class PlayerMovement : MonoBehaviour
     private void StartClimbing()
     {
         climbing = true;
-        grounded = false;          // para não travar o horizontal/queda
+        grounded = false;
         col.isTrigger = true;
-        rb.gravityScale = 0f;      // “gruda” na escada
+        rb.gravityScale = 0f;
         rb.linearVelocity = Vector2.zero;
     }
 
@@ -274,10 +270,13 @@ public class PlayerMovement : MonoBehaviour
         climbing = false;
         col.isTrigger = false;
         rb.gravityScale = originalGravity;
-        // mantém a velocidade vertical zerada ao sair
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
 
-        if (animator) animator.SetBool("Climbing", false);
+        if (animator)
+        {
+            animator.SetBool("Climbing", false);
+            animator.SetBool("Walk", false);
+        }
     }
 
 #if UNITY_EDITOR
