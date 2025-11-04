@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4133b4fe3fe2f3499e73385f359fe0e, type: 3}
+  m_Name: Level Standard Scores
+  m_EditorClassIdentifier: 
+  standardScores:
+  - totalRotations: 6
+    totalTime: 16
+  - totalRotations: 8
+    totalTime: 20
+  - totalRotations: 2
+    totalTime: 15
+  - totalRotations: 6
+    totalTime: 20
+  - totalRotations: 8
+    totalTime: 18
+  - totalRotations: 12
+    totalTime: 19
