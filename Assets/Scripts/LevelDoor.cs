@@ -10,7 +10,7 @@ public class LevelDoor : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (transform.rotation.z == 0)
+            if (collision.transform.rotation.z == transform.rotation.z)
                 onEnter.Invoke();
         }
     }

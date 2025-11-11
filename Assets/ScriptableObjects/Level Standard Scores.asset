@@ -19,9 +19,9 @@ MonoBehaviour:
     totalTime: 20
   - totalRotations: 2
     totalTime: 15
-  - totalRotations: 6
-    totalTime: 20
-  - totalRotations: 8
-    totalTime: 18
-  - totalRotations: 12
-    totalTime: 19
+  - totalRotations: 3
+    totalTime: 7
+  - totalRotations: 4
+    totalTime: 12
+  - totalRotations: 2
+    totalTime: 10
