@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c2565cf2182d149838c74486899c3a, type: 3}
+  m_Name: Soundtrack
+  m_EditorClassIdentifier: 
+  _mixer: {fileID: 24100000, guid: 844e0373f7f16714c926e5958c5bfe70, type: 2}
+  _sounds:
+  - name: menu
+    clip: {fileID: 8300000, guid: b9f8ae0cc805f61459ddc2fa122ae56b, type: 3}
+    mixerGroup: Music
+  - name: gameplay
+    clip: {fileID: 8300000, guid: bc7cd8936b160464ba5429ef29b5260a, type: 3}
+    mixerGroup: Music
+  - name: finalboss
+    clip: {fileID: 8300000, guid: 1d95b7b6925c8234d9f8edb9656b98da, type: 3}
+    mixerGroup: Music
