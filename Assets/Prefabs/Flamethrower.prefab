@@ -50,9 +50,9 @@ MonoBehaviour:
   rayDistance: 6
   hitMask:
     serializedVersion: 2
-    m_Bits: 136
-  activeTime: 5
-  interval: 0
+    m_Bits: 200
+  activeTime: 3
+  interval: 2
 --- !u!1 &7997653581895947811
 GameObject:
   m_ObjectHideFlags: 0

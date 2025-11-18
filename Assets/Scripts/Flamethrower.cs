@@ -12,6 +12,8 @@ public class Flamethrower : MonoBehaviour
     [SerializeField] private float activeTime = 1f;
     [SerializeField] private float interval = 4f;
 
+    private bool throwing;
+
     private void Start()
     {
         if (flamethrowerParticles == null)
@@ -24,19 +26,20 @@ public class Flamethrower : MonoBehaviour
         while (true)
         {
             flamethrowerParticles.Play();
-            StartCoroutine(HandleRaycastWhileActive());
+            throwing = true;
 
             yield return new WaitForSeconds(activeTime);
 
+            throwing = false;
             flamethrowerParticles.Stop();
 
             yield return new WaitForSeconds(interval);
         }
     }
 
-    private System.Collections.IEnumerator HandleRaycastWhileActive()
+    private void Update()
     {
-        while (flamethrowerParticles.isPlaying)
+        if (throwing)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, rayDistance, hitMask);
 
@@ -48,8 +51,6 @@ public class Flamethrower : MonoBehaviour
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
-
-           yield return null;
         }
     }
 
@@ -57,6 +58,7 @@ public class Flamethrower : MonoBehaviour
     // Gizmo opcional para ver o raio no editor
     private void OnDrawGizmos()
     {
+        if (!throwing) return;
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + transform.up * rayDistance);
     }
