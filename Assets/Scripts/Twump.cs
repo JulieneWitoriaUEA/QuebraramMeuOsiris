@@ -81,6 +81,12 @@ public class Twump : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         TryCrushPlayer(collision);
+
+        if (collision.collider.CompareTag("BreakableWall") && collision.relativeVelocity.magnitude >= 0.5f)
+            Destroy(collision.collider.gameObject);
+
+        if (!_isStuck && IsGroundCollision(collision))
+            StickToGround();
     }
 
     private void TryCrushPlayer(Collision2D collision)
