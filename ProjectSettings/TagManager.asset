@@ -10,6 +10,7 @@ TagManager:
   - Sarcofago
   - ShadowPlayer
   - PlayerBoss
+  - ShadowSpike
   layers:
   - Default
   - TransparentFX

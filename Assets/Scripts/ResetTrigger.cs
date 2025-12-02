@@ -9,7 +9,7 @@ public class ResetTrigger : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        else if (collision.CompareTag("PlayerBoss"))
+        else if (collision.CompareTag("PlayerBoss") && !CompareTag("ShadowSpike"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
