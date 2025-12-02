@@ -5,6 +5,6 @@ public class Cutscene : MonoBehaviour
 {
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu"); 
     }
 }

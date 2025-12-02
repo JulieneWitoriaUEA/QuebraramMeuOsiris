@@ -5031,7 +5031,7 @@ MonoBehaviour:
   flipSprite: 1
   sprite: {fileID: 1695082960388727157}
   animator: {fileID: 4171258479811942489}
-  _dust: {fileID: 4771939286194121184}
+  _dust: {fileID: 8458519537017773585}
   ladderTag: Ladder
   climbSpeed: 3.5
   snapXSpeed: 18

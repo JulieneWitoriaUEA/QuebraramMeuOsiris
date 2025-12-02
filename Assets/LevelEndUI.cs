@@ -15,7 +15,7 @@ public class LevelEndUI : MonoBehaviour
     [SerializeField] private UnlockedLeves _unlockedLevelsSO;
     private void OnEnable()
     {
-        levelEndBottomText.text = "Rotations: " + totalRotationsSO.value + $"\nTotal Time: {totalTimeSO.value:F2}s\nPress Enter for next stage";
+        levelEndBottomText.text = "Rotações: " + totalRotationsSO.value + $"\nTempo Total: {totalTimeSO.value:F2}s\nPressione Enter para continuar";
         if(totalRotationsSO.value > standardScoresSO.standardScores[currentLevel].totalRotations 
             && totalTimeSO.value > standardScoresSO.standardScores[currentLevel].totalTime)
             SecondStar.color = Color.black;

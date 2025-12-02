@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Enter for next stage
+  m_text: Pressione Enter para continuar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e1813269a3cb38145b2e82b78067f9a7, type: 2}
   m_sharedMaterial: {fileID: -6143288482238734232, guid: e1813269a3cb38145b2e82b78067f9a7, type: 2}
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level Done
+  m_text: "Fase conclu\xEDda"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e1813269a3cb38145b2e82b78067f9a7, type: 2}
   m_sharedMaterial: {fileID: -6143288482238734232, guid: e1813269a3cb38145b2e82b78067f9a7, type: 2}
