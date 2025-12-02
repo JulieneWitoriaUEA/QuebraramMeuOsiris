@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelChoiceController : MonoBehaviour
 {
+    [SerializeField] private UnlockedLeves _unlockedLeves;
+    [SerializeField] private Button[] _levelButtons;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -11,6 +15,16 @@ public class LevelChoiceController : MonoBehaviour
             {
                 SceneManager.LoadScene("Menu");
             }
+        }
+    }
+
+    private void Start()
+    {
+        if(SceneManager.GetActiveScene().name != "Menu") 
+            return;
+        for(int i = 0; i < _unlockedLeves.unlockedLevels; i++)
+        {
+            _levelButtons[i].interactable = true;
         }
     }
 

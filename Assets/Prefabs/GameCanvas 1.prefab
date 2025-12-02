@@ -343,7 +343,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 3047849238197683903}
   m_OnClick:
     m_PersistentCalls:
@@ -1282,7 +1282,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5115905945432134374}
   m_OnClick:
     m_PersistentCalls:
@@ -2242,7 +2242,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5082492940470506798}
   m_OnClick:
     m_PersistentCalls:
@@ -2532,7 +2532,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8596571627611095588}
   m_OnClick:
     m_PersistentCalls:
@@ -2787,7 +2787,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1258011506984546461}
   m_OnClick:
     m_PersistentCalls:
@@ -3470,7 +3470,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8954236556819706487}
   m_OnClick:
     m_PersistentCalls:
@@ -3624,7 +3624,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2566167405086124694}
   m_OnClick:
     m_PersistentCalls:
@@ -3932,7 +3932,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5831705260973002846}
   m_OnClick:
     m_PersistentCalls:
@@ -4376,7 +4376,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 4259086877054070984}
   m_OnClick:
     m_PersistentCalls:
@@ -5179,7 +5179,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5331124207862381614}
   m_OnClick:
     m_PersistentCalls:
@@ -5681,7 +5681,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1435822533523810863}
   m_OnClick:
     m_PersistentCalls:
@@ -6984,7 +6984,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5211596516620747985}
   m_OnClick:
     m_PersistentCalls:
@@ -7292,7 +7292,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5608118374988184383}
   m_OnClick:
     m_PersistentCalls:
@@ -7718,7 +7718,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5932367153781043234}
   m_OnClick:
     m_PersistentCalls:
@@ -8008,7 +8008,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8604524070625426841}
   m_OnClick:
     m_PersistentCalls:
@@ -8162,6 +8162,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197f160aa7de9034f9d079a5aa296b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unlockedLeves: {fileID: 11400000, guid: f3da4b3cdd054c245a7007ba7573ac33, type: 2}
+  _levelButtons:
+  - {fileID: 2592492608992248871}
+  - {fileID: 6891734686232662669}
+  - {fileID: 2472024924863439302}
+  - {fileID: 5419232955068384783}
+  - {fileID: 7618272135380470093}
+  - {fileID: 2438087001238335192}
+  - {fileID: 7380094319377593667}
+  - {fileID: 7709452400184328893}
+  - {fileID: 449838903740662813}
+  - {fileID: 5569131657286197890}
+  - {fileID: 2973634699645130799}
+  - {fileID: 3330666903156925483}
+  - {fileID: 6897150753558288321}
+  - {fileID: 3231259278990034342}
+  - {fileID: 239025583796548762}
 --- !u!1 &8840272290925307850
 GameObject:
   m_ObjectHideFlags: 0

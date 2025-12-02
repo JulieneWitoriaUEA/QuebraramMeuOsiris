@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         // --- Atualiza animações ---
         if (animator)
         {
-            bool isWalking = Mathf.Abs(x) > 0.01f && !climbing;
+            bool isWalking =        Mathf.Abs(x) > 0.01f && !climbing;
             animator.SetBool("Walk", isWalking);
             animator.SetBool("Climbing", climbing && Mathf.Abs(inputY) > 0.01f);
         }

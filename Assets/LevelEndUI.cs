@@ -12,6 +12,7 @@ public class LevelEndUI : MonoBehaviour
     [SerializeField] private Image SecondStar;
     [SerializeField] private Image ThirdStar;
     [SerializeField] private TextMeshProUGUI levelEndBottomText;
+    [SerializeField] private UnlockedLeves _unlockedLevelsSO;
     private void OnEnable()
     {
         levelEndBottomText.text = "Rotations: " + totalRotationsSO.value + $"\nTotal Time: {totalTimeSO.value:F2}s\nPress Enter for next stage";
@@ -29,6 +30,7 @@ public class LevelEndUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            _unlockedLevelsSO.unlockedLevels++;
             Time.timeScale = 1f;
         }
     }
