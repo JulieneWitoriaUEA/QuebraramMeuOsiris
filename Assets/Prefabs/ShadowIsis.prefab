@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -245631027
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 191d6d9b94366db4f9ba593c245ab030, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -226,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8160172236794827252, guid: 964de246b41561e44915a2eaa352ebac, type: 3}
       propertyPath: m_Name
-      value: ShadowIsis Variant
+      value: ShadowIsis
       objectReference: {fileID: 0}
     - target: {fileID: 8160172236794827252, guid: 964de246b41561e44915a2eaa352ebac, type: 3}
       propertyPath: m_TagString
