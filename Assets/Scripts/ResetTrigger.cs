@@ -3,12 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class ResetTrigger : MonoBehaviour
 {
-    public int levelShift;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+levelShift);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (collision.CompareTag("PlayerBoss"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
 }

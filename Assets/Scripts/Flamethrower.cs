@@ -51,6 +51,10 @@ public class Flamethrower : MonoBehaviour
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
+                else if (hit.transform.CompareTag("PlayerBoss"))
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+                }
         }
     }
 
