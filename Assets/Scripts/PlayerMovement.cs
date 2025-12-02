@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
         // se estiver escalando, não flipar com x
         if (!climbing && flipSprite && sprite && Mathf.Abs(x) > 0.01f)
-            sprite.flipX = x < 0f;
+            sprite.flipX = x * Mathf.Sign(speed) < 0f;
 
         // --- Atualiza animações ---
         if (animator)
@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // -------- WALL CHECK --------
-        float xDir = Mathf.Sign(input.x);
+        float xDir = Mathf.Sign(input.x*speed);
         float rayDistance = 0.6f; // how far ahead to check
         if (Mathf.Abs(input.x) > 0.01f)
         {

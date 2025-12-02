@@ -16,6 +16,9 @@ public class MapRotator : MonoBehaviour
     [Header("Player")]
     [SerializeField] private Rigidbody2D playerRb; // assign your player; we�ll freeze it while rotating
 
+    [Header("Shadow Player")]
+    [SerializeField] private Rigidbody2D shadowPlayerRb; // optional shadow player rotation
+
     private bool _isRotating;
     private bool _canRotate;
     private float _currentZ; // track world z rotation in degrees (multiples of 90)
@@ -72,6 +75,17 @@ public class MapRotator : MonoBehaviour
             playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
+        bool hadShadowPlayer = shadowPlayerRb != null;
+        RigidbodyConstraints2D shadowOldConstraints = RigidbodyConstraints2D.None;
+        if (hadShadowPlayer)
+        {
+            shadowOldConstraints = shadowPlayerRb.constraints;
+            shadowPlayerRb.linearVelocity = Vector2.zero;
+            shadowPlayerRb.angularVelocity = 0f;
+            shadowPlayerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+
         float start = _currentZ;
         float end = _currentZ + delta;
         float t = 0f;
@@ -82,6 +96,8 @@ public class MapRotator : MonoBehaviour
             float z = Mathf.LerpAngle(start, end, ease.Evaluate(Mathf.Clamp01(t)));
             transform.rotation = Quaternion.Euler(0, 0, z);
             playerRb.transform.eulerAngles = Vector3.zero;
+            if(hadShadowPlayer)
+                shadowPlayerRb.transform.eulerAngles = Vector3.zero;
             yield return null;
         }
 
@@ -91,6 +107,9 @@ public class MapRotator : MonoBehaviour
         // Unfreeze player
         if (hadPlayer)
             playerRb.constraints = oldConstraints;
+
+        if (hadShadowPlayer)
+            shadowPlayerRb.constraints = shadowOldConstraints;
 
         _isRotating = false;
         EventManager.TriggerEvent("EndRotation");
